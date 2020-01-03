@@ -17,14 +17,15 @@ public class ZookeeperConfigSender {
     private static final int SLEEP_TIME = 1000;
 
     public static void main(String[] args) throws Exception {
-        final String remoteAddress = "localhost:2181";
-        final String groupId = "Sentinel-Demo";
-        final String dataId = "SYSTEM-CODE-DEMO-FLOW";
+        final String remoteAddress = "192.168.174.128:2181,192.168.174.129:2181,192.168.174.130:2181";
+//        final String remoteAddress = "zk.soa.d.ziroom.com:2181";
+        final String groupId = "sentinel_rule_config/spring-cloud-user";
+        final String dataId = "FLOW-RULE";
         final String rule = "[\n"
                 + "  {\n"
-                + "    \"resource\": \"TestResource\",\n"
+                + "    \"resource\": \"getUserInfoByPhone\",\n"
                 + "    \"controlBehavior\": 0,\n"
-                + "    \"count\": 10.0,\n"
+                + "    \"count\": 2.0,\n"
                 + "    \"grade\": 1,\n"
                 + "    \"limitApp\": \"default\",\n"
                 + "    \"strategy\": 0\n"
